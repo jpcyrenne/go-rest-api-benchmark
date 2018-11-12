@@ -11,11 +11,12 @@ You need to have Golng insalled on your machine
 1) Download the code and cd into go-rest-api-benchmark
 2) Run : go run main.go
 3) Open your browser and call the doffeent routes.
+
 ex :
-http://localhost:8000/
-http://localhost:8000/fibonacci/20
-http://localhost:8000/fibonacci2/20
-http://localhost:8000/fibonacci3/20
+- http://localhost:8000/
+- http://localhost:8000/fibonacci/20
+- http://localhost:8000/fibonacci2/20
+- http://localhost:8000/fibonacci3/20
 
 You'll get:
 - the number (20th here) in your browser
