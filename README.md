@@ -17,4 +17,6 @@ http://localhost:8000/fibonacci/20
 http://localhost:8000/fibonacci2/20
 http://localhost:8000/fibonacci3/20
 
-You'll get the number (20th here) in your browser and the time it took in your shell.
+You'll get:
+- the number (20th here) in your browser
+- and the time it took in your shell (µs = microseconds).
