@@ -21,7 +21,6 @@ func main() {
 	router.HandleFunc("/fibonacci/{id}", getFibonacci).Methods("GET")
 	router.HandleFunc("/fibonacci2/{id}", getFibonacci2).Methods("GET")
 	router.HandleFunc("/fibonacci3/{id}", getFibonacci3).Methods("GET")
-	router.HandleFunc("/countries", getCountries)
 
 	log.Fatal(http.ListenAndServe(":8000", router))
 }
@@ -118,7 +117,7 @@ func getFibonacci3(w http.ResponseWriter, r *http.Request) {
 	//input : the nth fibonnachi desired (ex : 10)
 	//output: the reprsenting number of the nth fibonnachi (answer : 34)
 	//go routine version (multi processor)
-	//inspird by : https://www.jonathan-petitcolas.com/2014/08/18/fibonacci-generator-in-go.html
+	//inspired by : https://www.jonathan-petitcolas.com/2014/08/18/fibonacci-generator-in-go.html
 	//@48 fibonacci  -  10.033µs
 	//@48 fibonacci3 -  30.684µs (loop version 3x faster than recurive on my McBook pro).
 	// i.e. thre is a loop to launch the go routines.
@@ -143,10 +142,4 @@ func getFibonacci3(w http.ResponseWriter, r *http.Request) {
 	}
 	json.NewEncoder(w).Encode(total)
 	fmt.Println("fibonacci3 - ", time.Since(start))
-}
-
-func getCountries(w http.ResponseWriter, r *http.Request) {
-	params := mux.Vars(r)
-
-	json.NewEncoder(w).Encode(params)
 }
