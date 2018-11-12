@@ -4,7 +4,7 @@ I decided to see how GO would compare to this post : https://medium.com/@mihaige
 
 I also wanted to learn more about Go by doing things in different ways. This first example of code is to test Fobonacci as (1) a regular loop, (2) as a recursive fucntion and (3) as a go routine (try to profit from multi processors).
 
-Seems to give wrong numbes around the 95th number.  Not sure if it's a uint64 issue (bigger than unsigned 64 bit number)?  I will ty to undersand.
+Seems to give wrong numbes around the 95th number.  Not sure if it's a uint64 issue (bigger than unsigned 64 bit number)?  I will ty to undersand.  Compared with : http://www.maths.surrey.ac.uk/hosted-sites/R.Knott/Fibonacci/fibtable.html
 
 ## How To
 You need to have Golng insalled on your machine
