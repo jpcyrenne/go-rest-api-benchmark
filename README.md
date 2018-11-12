@@ -7,7 +7,7 @@ I also wanted to learn more about Go by doing things in different ways. This fir
 Seems to give wrong numbes around the 95th number.  Not sure if it's a uint64 issue (bigger than unsigned 64 bit number)?  I will ty to undersand.  Compared with : http://www.maths.surrey.ac.uk/hosted-sites/R.Knott/Fibonacci/fibtable.html
 
 ## How To
-You need to have Golng insalled on your machine
+You need to have Golang insalled on your machine
 1) Download the code and cd into go-rest-api-benchmark
 2) Run : go run main.go
 3) Open your browser and call the doffeent routes.
