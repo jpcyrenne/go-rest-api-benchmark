@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"math/big"
 	"net/http"
 	"strconv"
 	"time"
@@ -64,27 +65,28 @@ func getFibonacci(w http.ResponseWriter, r *http.Request) {
 	start := time.Now()
 	params := mux.Vars(r)
 	rank, _ := strconv.Atoi(params["id"])
-	first := uint64(0)
-	second := uint64(1)
-	total := uint64(0)
+	first := big.NewInt(0)
+	second := big.NewInt(1)
+	//total := big.NewInt(0)
 
 	if rank == 1 || rank == 0 {
-		total = 0
+		second = big.NewInt(0)
 	}
 
 	if rank == 2 {
-		total = 1
+		second = big.NewInt(1)
 	}
 
 	for i := 3; i <= rank; i++ {
-		total = first + second
-		first = second
-		second = total
+		// Compute the next Fibonacci number, storing it in a.
+		first.Add(first, second)
+		// Swap a and b so that b is the next number in the sequence.
+		first, second = second, first
 		//debug
 		//fmt.Println("loop fibonacci nth - ", i, " equals: ", second, " ", reflect.TypeOf(second), " ", time.Since(start))
 	}
 
-	json.NewEncoder(w).Encode(&total)
+	json.NewEncoder(w).Encode(&second)
 	fmt.Println("fibonacci - ", time.Since(start))
 }
 
